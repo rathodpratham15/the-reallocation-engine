@@ -10,8 +10,9 @@
 - Drafted by the agent on 2026-10-29 from `resume.json` (attested) and
   `profile.yml` (target_role); reviewed and edited by Pratham per the assignment's
   required two edits, then further corrected across two rounds of claude.ai
-  review and one self-caught agent correction (a weak evidence cell, removed
-  rather than patched) — see below the table and `logs/RUN_LOG.md`.
+  review — including a weak evidence cell claude.ai flagged twice before Claude
+  Code found its root cause and removed it — see below the table and
+  `logs/RUN_LOG.md`.
 
 ---
 
