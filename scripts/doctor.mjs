@@ -63,7 +63,12 @@ if (trackedFiles.length) {
   const inPrivateZone = (f) => /^private\//.test(f) || /^data\/ats\//.test(f);
   const isScaffold = (f) => /(^|\/)(README\.md|\.gitkeep|\.gitignore)$/i.test(f) || /\.example\./i.test(f);
   const isResumeArtifact = (f) => /\.resume\.(pdf|json)$|(^|\/)resume\.(json|pdf)$/i.test(f);
-  const leaks = trackedFiles.filter((f) => (inPrivateZone(f) && !isScaffold(f)) || isResumeArtifact(f));
+  // Assignment 5 override (2026-10-28): search/resume.json is intentionally
+  // tracked — the Setup Exercise requires it, an explicit student decision
+  // after the conflict with this repo's default policy was raised. Every
+  // other private/PII path is still caught below.
+  const isAssignment5Exception = (f) => f === 'search/resume.json';
+  const leaks = trackedFiles.filter((f) => (inPrivateZone(f) && !isScaffold(f)) || (isResumeArtifact(f) && !isAssignment5Exception(f)));
   if (leaks.length) {
     hardFail = true;
     console.log(`  ✗ ${leaks.length} private/PII path(s) are git-tracked — REMOVE before pushing:`);

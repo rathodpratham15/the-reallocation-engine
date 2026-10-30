@@ -40,14 +40,15 @@ __pycache__/
 /data/ats/*
 !/data/ats/.gitignore
 !/data/ats/portals.example.yml
-/search/*
-# Fictional committable example personas — the ONLY resume-shaped files
-# that belong in git (DATA_CONTRACT.md §Zero-Conditions):
-!/search/examples/
-!/search/examples/**
+# Assignment 5 override (2026-10-28): the Setup Exercise requires real
+# search/resume.json + profile.yml + gaps.md to be committed to the
+# student's fork — an explicit, informed decision to override this repo's
+# default privacy policy below, made after the conflict was raised.
+# search/private-notes.md stays ignored regardless (see further down).
 
 # Belt-and-suspenders: resume artifacts are blocked everywhere else.
 resume.json
+!/search/resume.json
 **/*.resume.pdf
 **/resume.pdf
 
@@ -80,3 +81,4 @@ youtube/**/*.bak-*
 
 # DOL OFLC wage-data zips + full exports (fetched by scripts/contrib/2026fa/mayank-1024-wage-level-floor/fetch-oflc.sh)
 /data/dol/oflc/raw/
+search/private-notes.md

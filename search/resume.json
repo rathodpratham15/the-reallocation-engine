@@ -1,0 +1,169 @@
+{
+  "_comment": "Extracted from Pratham_Rathod_Resume.pdf (Assignment-5 folder) plus the Sep-Dec 2022 University of Mumbai stint, confirmed by Pratham as a separate real engagement from the Dec 2023-Mar 2024 one.",
+  "attested": true,
+  "attested_date": "2026-10-29",
+  "attestation_note": "Three errors corrected: (1) Full-Stack Developer (Sep-Dec 2022) was mis-sequenced ahead of Moonlighting (Jan-Jul 2023) in the experience list, breaking reverse-chronological order; (2) the agent silently labeled University of Mumbai's GPA as a native 3.5/4.0 without asking — it's actually a self-converted figure from a 10-point Indian CGPA scale, now noted as such; (3) two ongoing projects (InferMesh, Sutriva) had end_date set to the string \"present\", mixing a word into a date-typed field — now end_date: null with an explicit status field. Separately checked and confirmed accurate, not errors: project type/team_size fields, the Moonlighting 'Software Engineer' title (not an internship), and the identical 15% PostgreSQL optimization appearing on both University of Mumbai entries (two real, separate results, not a copy-paste duplicate).",
+  "post_attestation_additions": "2026-10-29, after initial attestation: added real url/repo/npm fields to InferMesh, Sutriva, and Orqen (closing a gaps.md row with already-existing links, not new work); split the Utkarsh publication's single venue string into presented_at (ICIET-23) and published_in (Journal of Harbin Engineering University) per Pratham's clarification. Neither change alters any previously attested factual claim.",
+  "personal": {
+    "name": "Pratham Rathod",
+    "location": "Boston, MA",
+    "phone": "REDACTED-PHONE",
+    "email": "REDACTED-EMAIL",
+    "linkedin": "linkedin.com/in/pratham-rathod",
+    "github": "github.com/rathodpratham15",
+    "website": "pratham.click"
+  },
+  "education": [
+    {
+      "institution": "Northeastern University",
+      "location": "Boston, MA",
+      "degree": "MS, Computer Software Engineering",
+      "gpa": "3.9/4.0",
+      "start_date": "2024-09",
+      "end_date": "2026-12",
+      "status": "in-progress"
+    },
+    {
+      "institution": "University of Mumbai",
+      "location": "Mumbai, India",
+      "degree": "BE, Computer Science",
+      "gpa": "3.5/4.0",
+      "gpa_note": "University of Mumbai grades on a 10-point CGPA scale; 3.5/4.0 is Pratham's own conversion, not a native 4.0-scale GPA — stated here so the conversion basis is defensible, not hidden behind a bare number.",
+      "start_date": "2020-06",
+      "end_date": "2024-06",
+      "status": "completed"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Swapt",
+      "location": "Boston, MA",
+      "title": "Software Engineer",
+      "start_date": "2025-05",
+      "end_date": "2025-12",
+      "bullets": [
+        "Owned three customer-facing products end to end as sole full-stack engineer (frontend, backend, infrastructure); built the G FUEL demo in 24 hours, won the client, then took it to production for 2,143 users.",
+        "Engineered retry-safe background workflows on Temporal, BullMQ, and Redis with idempotency and concurrency controls, keeping 13 integrations reliable at 6,000-12,000 external API calls a day.",
+        "Eliminated a double-claim race in a limited-reward feature with PostgreSQL row-level locking (SELECT FOR UPDATE) inside a transaction, keeping redemptions correct under concurrent load.",
+        "Integrated OpenAI gpt-image-1 and GPT-4o vision into an in-editor feature for generating and refining product images.",
+        "Shipped through tech-lead-reviewed PRs using an AI-native Cursor and Claude Code workflow, turning client and designer feedback into production features."
+      ],
+      "attestation_correction": ""
+    },
+    {
+      "company": "University of Mumbai",
+      "location": "Mumbai, India",
+      "title": "Android Developer",
+      "start_date": "2023-12",
+      "end_date": "2024-03",
+      "bullets": [
+        "Delivered a real-time marathon-tracking Android app (Kotlin, Jetpack Compose) for a large student user base.",
+        "Created a React Native build for iOS and Android with SSL-compliant Razorpay payments (~432 transactions a day).",
+        "Cut data-retrieval time 15% by optimizing PostgreSQL queries and API requests."
+      ],
+      "attestation_correction": ""
+    },
+    {
+      "company": "Moonlighting Entertainments",
+      "location": "Mumbai, India",
+      "title": "Software Engineer",
+      "start_date": "2023-01",
+      "end_date": "2023-07",
+      "bullets": [
+        "Launched a consumer ticketing platform (React, Next.js, DynamoDB) with a faster mobile checkout and AWS EC2 autoscaling for peak on-sale traffic, growing monthly sales 118% over the previous version.",
+        "Reduced REST API latency 19% via performance profiling, removing redundant DynamoDB queries and network round-trips.",
+        "Load-tested throughput and latency at peak traffic with JMeter and Postman to guide scaling decisions.",
+        "Standardized checkout and event pages with a reusable React component library, speeding feature delivery."
+      ],
+      "attestation_correction": ""
+    },
+    {
+      "company": "University of Mumbai",
+      "location": "Mumbai, India",
+      "title": "Full-Stack Developer",
+      "start_date": "2022-09",
+      "end_date": "2022-12",
+      "bullets": [
+        "Delivered a full-stack marathon-registration platform (React, Node.js, Flask) running the complete sign-up and payment flow.",
+        "Integrated Razorpay payments and Twilio SMS, then optimized PostgreSQL queries to reduce execution time by 15%.",
+        "Automated participant registration and race-completion tracking with an admin module (Python, PostgreSQL)."
+      ],
+      "agent_note": "Pulled from a second, differently-framed resume draft, not the primary PDF — confirmed by Pratham as a real, separate engagement from the Dec 2023-Mar 2024 Android Developer role, not a duplicate of it.",
+      "attestation_correction": ""
+    }
+  ],
+  "projects": [
+    {
+      "name": "InferMesh",
+      "description": "LLM Inference Gateway in Go",
+      "url": "https://github.com/rathodpratham15/infermesh",
+      "start_date": "2026-10",
+      "end_date": null,
+      "status": "ongoing",
+      "type": "open-source",
+      "team_size": "solo",
+      "bullets": [
+        "Designed a Go gateway exposing one OpenAI-compatible API with routing, retries, SSE/WebSocket streaming, and pluggable adapters for vLLM and Triton (TensorRT-LLM) backends.",
+        "Protected backends with admission control: per-backend concurrency limits, a bounded queue, and 429 load shedding.",
+        "Instrumented OpenTelemetry/Prometheus metrics (latency, time to first token, throughput, queue depth) with Grafana dashboards; deployed on Kubernetes via Helm with autoscaling and a Kafka telemetry pipeline.",
+        "Covered the gateway with 114 Go tests and inferbench, a reproducible benchmarking tool."
+      ],
+      "agent_note": "Test count (114) not independently re-verified by the agent for this exercise, unlike the Sutriva count below.",
+      "attestation_correction": ""
+    },
+    {
+      "name": "Sutriva",
+      "description": "Temporal-Memory MCP Server for Coding Agents",
+      "url": "https://sutriva.pratham.click",
+      "repo": "https://github.com/rathodpratham15/Sutriva",
+      "npm": "https://www.npmjs.com/package/sutriva",
+      "start_date": "2026-08",
+      "end_date": null,
+      "status": "ongoing",
+      "type": "open-source",
+      "team_size": "solo",
+      "bullets": [
+        "Published an MCP server (9 tools) to npm that gives coding agents queryable memory of past sessions and evidence.",
+        "Automated an eval harness that runs Claude Code headlessly against seeded bugs and grades fixes on file localization, root cause, and behavior."
+      ],
+      "agent_note": "Independently verified by the agent on 2026-10-29: live on npm as sutriva@0.1.1 and @sutriva/mcp-server@0.1.1; current test suite is 21 files / 111 tests, all passing under the required Node 22.14.0 (confirmed by directly running pnpm test, not taken from the README).",
+      "attestation_correction": ""
+    },
+    {
+      "name": "Orqen",
+      "description": "AI Workflow and Agent Orchestration Platform",
+      "url": "https://orqen.pratham.click",
+      "start_date": "2026-05",
+      "end_date": "2026-07",
+      "type": "personal",
+      "team_size": "solo",
+      "bullets": [
+        "Architected a distributed DAG engine on Celery and Redis with BFS fan-out and Kahn's-algorithm cycle checks.",
+        "Checkpointed run state to PostgreSQL so paused or interrupted runs, including human approval gates, resume on any worker.",
+        "Added Claude tool-calling agent nodes and an LLM node across 4 providers and 14 models with per-model cost tracking."
+      ],
+      "agent_note": "Not independently re-verified by the agent for this exercise — self-reported only.",
+      "attestation_correction": ""
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "Go", "TypeScript", "JavaScript", "Java", "SQL", "C++ (coursework)"],
+    "fundamentals": ["Data structures", "Algorithms", "Distributed systems", "Concurrency", "Performance profiling"],
+    "large_language_models": ["OpenAI", "Anthropic", "Gemini", "Groq", "Tool-calling agents", "RAG", "pgvector", "Evals", "MCP", "vLLM", "Triton"],
+    "cloud_infrastructure": ["Kubernetes", "Helm", "Docker", "AWS", "GCP", "Kafka", "Redis", "Celery", "Temporal", "PostgreSQL", "DynamoDB"],
+    "full_stack_and_tooling": ["React", "Next.js", "REST APIs", "OpenTelemetry", "Prometheus", "Grafana", "GitHub Actions", "Linux", "Claude Code"]
+  },
+  "publications": [
+    {
+      "title": "Utkarsh",
+      "presented_at": "ICIET-23",
+      "published_in": "Journal of Harbin Engineering University",
+      "date": "2023"
+    },
+    {
+      "title": "FoodResQ",
+      "venue": "IJRASET",
+      "date": "2023-09"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+# search/profile.yml — Pratham Rathod's real target role, constraints, and search preferences.
+# Drafted from a 5-question intake (2026-10-29); reviewed and corrected by Pratham before use.
+# Corrections from the agent's first draft (see logs/RUN_LOG.md for the full list):
+# target_role.primary contradicted company_size_range and industry.target_sectors
+# (said "seed-Series D" while the other two fields said big tech / fintech / consumer
+# tech too) — widened the sentence to match the real, broader search, instead of
+# narrowing the other fields to match an accidentally-narrow sentence.
+candidate:
+  name: Pratham Rathod
+  email: REDACTED-EMAIL
+  phone: "REDACTED-PHONE"
+  linkedin: linkedin.com/in/pratham-rathod
+  github: github.com/rathodpratham15
+  location: Boston, MA
+
+target_role:
+  primary: "Early-career (new-grad) full-stack software engineer building AI-native / agentic products and developer tooling, at companies ranging from seed-stage AI-infrastructure and AI-native product startups through Series D, and at big tech — across AI/ML infrastructure, developer tools/DX, fintech, and consumer tech."
+  secondary: [Product Engineer, AI/Agent Engineer, "Frontend Engineer (React/TS)", Forward-Deployed Engineer]
+  excluded: []
+
+visa:
+  type: F-1
+  current_status: "F-1, full-time study, no active work authorization (CPT ended with Swapt in Dec 2025; OPT has not started). Most recent work authorization: CPT, approximately 8 months used full-time (Swapt, May-Dec 2025)."
+  degree: "MS Computer Software Engineering, Northeastern University"
+  grad_date: "2026-12"
+  opt_start_date: "2027-01"
+  opt_start_status: planned
+  opt_end_date: "2028-01"
+  opt_end_status: estimate
+  opt_end_basis: "Standard 12-month OPT window from planned 2027-01 start. This is the gate value — NOT the STEM-extended date — because stem_eligible below is uncertain, not confirmed."
+  stem_extension_end_if_confirmed: "2030-01"
+  stem_extension_status: "not used as a gate value until stem_eligible is confirmed"
+  unemployment_days_used: 0
+  unemployment_days_used_basis: "Not yet on OPT; CPT does not accrue OPT unemployment days."
+  unemployment_ceiling: 90
+  unemployment_ceiling_note: "Rises to 150 (90 + 60) only if STEM OPT extension is later confirmed and taken."
+  buffer_target: 80
+  stem_eligible: uncertain
+  stem_requires_e_verify_employer: true  # gate applies only once stem_eligible is confirmed — the STEM extension restricts work to E-Verify-enrolled employers, paid, >=20 hrs/week; an employer without E-Verify cannot carry the extension even if everything else fits
+  notes: >
+    OPT has not started; every OPT/STEM-OPT date above is a planning estimate, not
+    DSO-confirmed. CS/SWE is a STEM-CIP-coded degree, so STEM OPT eligibility is
+    likely, but it is deliberately marked "uncertain" rather than "yes" per the
+    assignment's own rule: an unconfirmed "yes" would let the engine's timeline gate
+    assume a ~2030 runway that may not actually exist. The actual OPT eligibility
+    rule is not exceeding 12 months of full-time CPT authorization (part-time CPT
+    does not count against it); approximately 8 months of full-time CPT have been
+    used (Swapt), which is under that line — what still needs DSO confirmation is
+    the official count of full-time CPT months, not a vague "limit."
+
+geography:
+  current_location: Boston, MA
+  primary_targets: ["San Francisco Bay Area", "New York City", "Boston"]
+  open_to_relocate_us: true
+  open_to_remote_us: true
+  hard_exclusions: ["non-US roles"]
+
+industry:
+  target_sectors: ["AI/ML infrastructure", "AI-native product startups", "developer tools / DX", fintech, "consumer tech"]
+  company_size_range: "Seed and early-stage through Series A-D, and big tech — the full range, by design, matching target_role.primary"
+  hard_exclusions: []
+  soft_weak_fits: ["deep crypto/blockchain", "pure quant/HFT modeling"]
+  soft_weak_fits_note: "Not excluded outright — weaker personal fit, lower priority, not a skip-regardless gate."
+
+sponsorship:
+  requires_sponsorship: true
+  gate_note: "Per the assignment's own rule: a company with no sponsorship history is skip-regardless, regardless of fit."
