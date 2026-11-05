@@ -13,9 +13,9 @@ publication-venue check (I did not run that check myself); and reviews of
 - Extracting `search/resume.json` from `Pratham_Rathod_Resume.pdf` and a second,
   differently-framed resume draft I supplied, structuring prose bullets into
   typed fields (dates, titles, companies). Claude (claude.ai) separately performed
-  its own independent extraction from the same material and reviewed Claude
-  Code's draft, which is how two of the three real errors were first flagged
-  (see "What I changed" below).
+  its own extraction from the same material, but all three real attestation
+  errors in the final file were ones I caught myself, directly (see "What I
+  changed" below).
 - Drafting `search/profile.yml` from my answers to the five required intake
   questions, including target-role framing suggestions from Claude (claude.ai).
 - Researching real evidence for `search/gaps.md`: fetching Palantir's and Cursor's
@@ -39,18 +39,24 @@ real jobs, what my actual target role and visa situation are, which gap row to
 kill and why, and how to rewrite the testing gap in my own words. Claude Code
 drafted the structured files and ran the real verification work (fetching
 postings, running the live test suite). Claude (via claude.ai, a separate AI
-tool) did its own parallel `resume.json` extraction, suggested target-role
-framing, and reviewed drafts of `resume.json`, `profile.yml`, `gaps.md` (twice),
-and the `logs/RUN_LOG.md` entry — catching real defects in each, cited below.
+tool) did its own parallel `resume.json` extraction and suggested target-role
+framing, and reviewed drafts of `profile.yml`, `gaps.md` (twice), and the
+`logs/RUN_LOG.md` entry — catching real defects in those three, cited below. All
+three `resume.json` attestation errors were caught by me directly, not by
+either AI tool.
 
 **What I changed:**
-Of the three `resume.json` errors: Claude (claude.ai) flagged the GPA scale
-(noting Indian universities usually use a 10-point CGPA, so a bare "3.5/4.0" was
-worth questioning) and the `"present"` string sitting in a date-typed field; I
-then confirmed both and supplied the actual resolving fact for the GPA one (it's
-my own conversion, not a native 4.0 figure). The chronology break (Full-Stack
-Developer mis-sequenced ahead of Moonlighting) I caught directly, with no AI
-involved.
+All three `resume.json` errors were ones I caught myself, directly, with no AI
+involved in finding any of them: the chronology break (Full-Stack Developer
+mis-sequenced ahead of Moonlighting), the GPA scale (Claude Code had silently
+assumed "3.5/4.0" was a native figure; I caught this and supplied the actual
+fact — it's my own conversion from a 10-point Indian CGPA), and the `"present"`
+string sitting in a date-typed field. (A review of an earlier draft of this
+disclosure incorrectly credited claude.ai with flagging the GPA scale and the
+`"present"` string — I checked that claim against the actual conversation record
+and it does not hold up; both were things I reported directly, in my own words,
+with no claude.ai review in between. That incorrect attribution has been
+corrected here.)
 
 Separately, Claude (claude.ai) reviewed a draft of `profile.yml` and found a
 three-way contradiction in the target-role scope (the primary-role sentence said
@@ -101,9 +107,9 @@ inconsistently across two resume drafts — only my own memory of my history
 resolved that, and it changed how the record is structured, not just a wording
 choice.
 
-Claude (claude.ai) flagged that the 3.5 might be on a different scale than Claude
-Code had silently assumed, but no AI could know it was my own conversion from a
-10-point CGPA — only I knew that, and supplied it directly. Neither Claude Code
+Claude Code silently assumed the 3.5 was a native 4.0-scale figure; no AI could
+know it was my own conversion from a 10-point CGPA — only I knew that, caught
+the assumption, and supplied the actual fact directly. Neither Claude Code
 nor Claude (claude.ai) could resolve the real factual question of Sutriva's
 current test count on their own say-so — three different numbers (87, 98, 111)
 appeared across this exercise from different sources and different points in

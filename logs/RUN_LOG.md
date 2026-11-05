@@ -174,19 +174,21 @@ Built `search/resume.json`, `search/profile.yml`, and `search/gaps.md` — the
 personal data layer for this fork. `search/private-notes.md` is gitignored per
 Step 0.
 
-**Three attestation errors caught and fixed in resume.json:** (1) Full-Stack
-Developer (Sep-Dec 2022) was mis-sequenced ahead of Moonlighting (Jan-Jul 2023),
-breaking reverse-chronological order — caught directly by Pratham, no AI involved;
-(2) the agent silently assumed University of Mumbai's GPA was a native 3.5/4.0
-without asking — Claude (claude.ai) flagged that the scale might not be native
-(Indian universities typically grade on a 10-point CGPA), and Pratham then
-supplied the actual resolving fact: it's his own conversion from a 10-point CGPA,
-which no AI could have known; (3) two ongoing projects had `end_date: "present"`,
-mixing a word into a date-typed field, also flagged by Claude (claude.ai) and
-confirmed by Pratham — now `end_date: null` plus an explicit `status` field. Named
-plainly, not glossed over: (1) and (3) are formatting/schema fixes, not errors
-about Pratham's actual history; only (2) is a real error about him. A further pass
-specifically hunted for stronger candidates —
+**Three attestation errors caught and fixed in resume.json, all three by Pratham
+directly, with no AI involved in finding any of them:** (1) Full-Stack Developer
+(Sep-Dec 2022) was mis-sequenced ahead of Moonlighting (Jan-Jul 2023), breaking
+reverse-chronological order; (2) the agent silently assumed University of
+Mumbai's GPA was a native 3.5/4.0 without asking — Pratham caught this and
+supplied the actual resolving fact: it's his own conversion from a 10-point
+Indian CGPA, which no AI could have known; (3) two ongoing projects had
+`end_date: "present"`, mixing a word into a date-typed field — now `end_date:
+null` plus an explicit `status` field. (A review of an earlier draft of this
+entry incorrectly credited Claude (claude.ai) with flagging (2) and (3); checked
+against the actual conversation record, both were Pratham's own direct catches,
+and that incorrect attribution is corrected here.) Named plainly, not glossed
+over: (1) and (3) are formatting/schema fixes, not errors about Pratham's actual
+history; only (2) is a real error about him. A further pass specifically hunted
+for stronger candidates —
 the project `type`/`team_size` fields ("open-source," "solo," agent-inferred, not
 stated), the Moonlighting "Software Engineer" title (could have been a promoted
 internship), and the identical 15% PostgreSQL figure on both University of Mumbai
